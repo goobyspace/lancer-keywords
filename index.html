@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -9,17 +10,17 @@
     }
   </style>
 </head>
+
 <body>
   <div id="demo"></div>
 
   <script type="module">
     import { html, render } from 'lit';
-    import '../dist/src/lancer-keyword.js';
+    import { Categories } from '../dist/src/index.js';
 
-    const header = 'Hello owc World!';
     render(
       html`
-        <lancer-keyword .header=${header}>
+        <lancer-keyword .keyword=${Categories.attacks.keywords.tech_attack}>
           some light-dom
         </lancer-keyword>
       `,
@@ -27,4 +28,5 @@
     );
   </script>
 </body>
+
 </html>

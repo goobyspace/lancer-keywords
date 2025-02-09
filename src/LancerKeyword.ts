@@ -1,27 +1,28 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import { keyword } from './types.js';
+import { styles } from './styles.js';
 
 export class LancerKeyword extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--lancer-keyword-text-color, #000);
-    }
-  `;
+  static styles = styles;
 
-  @property({ type: String }) header = 'Hey there';
-
-  @property({ type: Number }) counter = 5;
-
-  __increment() {
-    this.counter += 1;
-  }
+  @property({ type: Object }) keyword: keyword = {
+    name: '',
+    text: '',
+    page: '',
+    colour: '',
+    category: '',
+  };
 
   render() {
+    // if you click on a keyword, it should open up a card with the text
+    // not sure how we should close these cards yet but its going to either be a timer with a hover
+    // or a click off/close button
+
     return html`
-      <h2>${this.header} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <p class="keyword keyword-${this.keyword.colour}">${this.keyword.name}</p>
     `;
   }
 }
+
+window.customElements.define('lancer-keyword', LancerKeyword);
