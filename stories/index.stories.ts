@@ -1,13 +1,14 @@
-import { html, TemplateResult } from "lit";
-import "../src/lancer-keyword.js";
+import { html, TemplateResult } from 'lit';
+import '../src/lancer-keyword.js';
+import { Categories } from '../src/enums.js';
 
 export default {
-  title: "LancerKeyword",
-  component: "lancer-keyword",
+  title: 'LancerKeyword',
+  component: 'lancer-keyword',
   argTypes: {
-    header: { control: "text" },
-    counter: { control: "number" },
-    textColor: { control: "color" },
+    header: { control: 'text' },
+    counter: { control: 'number' },
+    textColor: { control: 'color' },
   },
 };
 
@@ -24,18 +25,8 @@ interface ArgTypes {
   slot?: TemplateResult;
 }
 
-const Template: Story<ArgTypes> = ({
-  header = "Hello world",
-  counter = 5,
-  textColor,
-  slot,
-}: ArgTypes) => html`
-  <lancer-keyword
-    style="--lancer-keyword-text-color: ${textColor || "black"}"
-    .header=${header}
-    .counter=${counter}
-  >
-    ${slot}
+const Template: Story<ArgTypes> = () => html`
+  <lancer-keyword .keyword=${Categories.attacks.keywords.tech_attack}>
   </lancer-keyword>
 `;
 
