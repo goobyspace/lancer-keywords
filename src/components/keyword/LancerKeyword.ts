@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { keyword } from './types.js';
-import { styles } from './styles.js';
+import { keyword } from '../../types.js';
+import { styles } from '../../styles.js';
 
 export class LancerKeyword extends LitElement {
   static styles = styles;

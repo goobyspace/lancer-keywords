@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
-import { LancerKeyword } from '../src/LancerKeyword.js';
+import { LancerKeyword } from '../src/components/keyword/LancerKeyword.js';
 import '../src/lancer-keyword.js';
 
 describe('LancerKeyword', () => {
