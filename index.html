@@ -20,9 +20,8 @@
 
     render(
       html`
-        <lancer-keyword .keyword=${Categories.attacks.keywords.tech_attack}>
-          some light-dom
-        </lancer-keyword>
+        The following text explains the use of the <lancer-keyword .keyword=${Categories.attacks.keywords.tech_attack} .showCard=${true}>
+        </lancer-keyword> stat within the Lancer TTRPG system.
       `,
       document.querySelector('#demo')
     );

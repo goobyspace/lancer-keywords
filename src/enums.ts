@@ -4,8 +4,7 @@
 // just a question of the whole "can someone see it if they dont have the book"
 // i think the answer is yes, but i'm not sure
 
-// eslint-disable-next-line no-shadow
-export enum Books {
+export enum BooksEnum {
   // core
   'Core' = 'C',
   // narratives
@@ -20,7 +19,6 @@ export enum Books {
   'The Karrakin Trade Baronies' = 'TKTB',
 }
 
-// eslint-disable-next-line no-shadow
 export enum CategoriesEnum {
   'Attacks' = 'attacks',
   'Modifiers' = 'modifiers',

@@ -72,7 +72,10 @@ If you customize the configuration a lot, you can consider moving them to indivi
 ## Local Demo with `web-dev-server`
 
 ```bash
-npm start
+npm watch
+```
+```bash
+npm dev
 ```
 
 To run a local development server that serves the basic demo located in `demo/index.html`

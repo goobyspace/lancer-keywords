@@ -1,6 +1,5 @@
 import { html, TemplateResult } from 'lit';
-import '../src/index.js';
-import { Categories } from '../src/enums.js';
+import { Categories } from '../src/index.js';
 
 export default {
   title: 'LancerKeyword',
