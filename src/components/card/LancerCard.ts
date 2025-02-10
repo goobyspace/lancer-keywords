@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { keyword } from '../../types.js';
-import { styles } from '../../styles.js';
+import { styles } from '../keyword/styles.js';
 
 export class LancerCard extends LitElement {
   static styles = styles;
@@ -10,7 +10,6 @@ export class LancerCard extends LitElement {
     name: '',
     text: '',
     page: '',
-    colour: '',
     category: '',
   };
 

@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { keyword } from '../../types.js';
-import { styles } from '../../styles.js';
+import { styles } from './styles.js';
 
 export class LancerKeyword extends LitElement {
   static styles = styles;
@@ -10,7 +10,6 @@ export class LancerKeyword extends LitElement {
     name: '',
     text: '',
     page: '',
-    colour: '',
     category: '',
   };
 
@@ -20,7 +19,9 @@ export class LancerKeyword extends LitElement {
     // or a click off/close button
 
     return html`
-      <p class="keyword keyword-${this.keyword.colour}">${this.keyword.name}</p>
+      <p class="lancer-keyword lancer-keyword-${this.keyword.category}">
+        ${this.keyword.name}
+      </p>
     `;
   }
 }

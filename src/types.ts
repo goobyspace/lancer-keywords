@@ -10,7 +10,6 @@ export interface keyword {
   name: string;
   text: string;
   page: string;
-  colour: string;
   category: string;
 }
 

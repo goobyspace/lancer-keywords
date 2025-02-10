@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit';
-import '../src/lancer-keyword.js';
+import '../src/index.js';
 import { Categories } from '../src/enums.js';
 
 export default {

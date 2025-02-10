@@ -13,7 +13,7 @@
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
-    "start": "tsc --watch --preserveWatchOutput",
+    "watch": "tsc --watch --preserveWatchOutput",
     "dev": "web-dev-server --watch --port 8000 --open",
     "build": "tsc && npm run analyze -- --exclude dist",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
