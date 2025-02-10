@@ -2,8 +2,6 @@
 
 Web component that lets you see info cards for keywords from the Lancer TTRPG
 
-This repository was created via [open-wc](https://github.com/open-wc/open-wc).
-
 ## Installation
 
 ```bash
@@ -19,6 +17,25 @@ npm i lancer-keyword
 
 <lancer-keyword></lancer-keyword>
 ```
+
+## Local Development with `web-dev-server`
+
+First, make sure to install all the node modules:
+
+```bash
+npm install
+```
+
+Once you've done so, open two terminals, and run each command seperately:
+
+```bash
+npm run watch
+```
+```bash
+npm run dev
+```
+
+To run a local development server that serves the index.html file as an entry for the project.
 
 ## Linting and formatting
 
@@ -69,13 +86,4 @@ For most of the tools, the configuration is in the `package.json` to reduce the 
 
 If you customize the configuration a lot, you can consider moving them to individual files.
 
-## Local Demo with `web-dev-server`
-
-```bash
-npm watch
-```
-```bash
-npm dev
-```
-
-To run a local development server that serves the basic demo located in `demo/index.html`
+This repository was created via [open-wc](https://github.com/open-wc/open-wc).
