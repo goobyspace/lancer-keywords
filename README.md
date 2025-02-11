@@ -12,11 +12,13 @@ npm i lancer-keyword
 
 ```html
 <script type="module">
-  import 'lancer-keyword/lancer-keyword.js';
+  import { Categories } from 'lancer-keyword';
 </script>
 
-<lancer-keyword></lancer-keyword>
+<lancer-keyword keyword={Categories.attacks.keywords.tech_attack}></lancer-keyword>
 ```
+
+To use with frameworks like React, you might need adapters for web components like [@lit/react](https://github.com/lit/lit/tree/main/packages/react)
 
 ## Local Development with `web-dev-server`
 
