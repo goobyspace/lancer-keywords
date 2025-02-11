@@ -87,3 +87,7 @@ For most of the tools, the configuration is in the `package.json` to reduce the 
 If you customize the configuration a lot, you can consider moving them to individual files.
 
 This repository was created via [open-wc](https://github.com/open-wc/open-wc).
+
+Lancer-keywords is not an official Lancer product; it is a third party work, and is not affiliated with Massif Press. Lancer-keywords is published via the Lancer Third Party License.”
+
+Lancer is copyright Massif Press

@@ -9,7 +9,6 @@ export const styles = css`
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: red;
   }
 
   .lancer-card {
@@ -19,6 +18,7 @@ export const styles = css`
     position: absolute;
     width: 40rem;
     font-family: 'Inter', 'Roboto', sans-serif;
+    white-space: normal;
 
     .lancer-card-header {
       font-weight: 700;

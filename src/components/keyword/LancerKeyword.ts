@@ -1,6 +1,5 @@
-import { html, LitElement, render, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
-import { createRef, ref, Ref } from 'lit/directives/ref.js';
 import { keyword } from '../../types.js';
 import { styles } from './styles.js';
 import '../card/LancerCard.js';
@@ -15,27 +14,28 @@ export class LancerKeyword extends LitElement {
     category: '',
   };
 
-  cardRef: Ref<LitElement> = createRef();
+  cards: TemplateResult[] = [];
 
-  clickHandler() {
-    const card: TemplateResult = html`<lancer-card
-      .keyword=${this.keyword}
-    ></lancer-card>`;
-    render(card, document.body);
+  clickHandler(event: MouseEvent) {
+    this.cards.push(
+      html`<lancer-card
+        .keyword=${this.keyword}
+        x=${event.x}
+        y=${event.y}
+      ></lancer-card>`,
+    );
+    this.requestUpdate();
   }
 
   render() {
-    // todo: make rendering work after you click it away once
-    // we can also only have one card total with this method which is cringe
-    // set position to mouse when card spawns in
-
     return html`<span
-      class="lancer-keyword lancer-keyword-${this.keyword.category}"
-      @click=${this.clickHandler}
-      @keydown=${(e: KeyboardEvent) => e.key === 'Enter' && this.clickHandler()}
-      tabindex="0"
-      >${this.keyword.name}</span
-    >`;
+        class="lancer-keyword lancer-keyword-${this.keyword.category}"
+        @click=${this.clickHandler}
+        @keydown=${(e: KeyboardEvent) =>
+          e.key === 'Enter' && this.clickHandler(new MouseEvent('click'))}
+        tabindex="0"
+        >${this.keyword.name}</span
+      >${this.cards.map(card => card)}`;
   }
 }
 
