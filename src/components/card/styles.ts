@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
-// all colours are either colour picked from the core book
-// or grabbed from https://valkyrion.itch.io/lancer-rpg-template
+// all colours are colour picked from the core book
+// or chosen to match the style of the core book
 export const styles = css`
   .lancer-card-clickthrough {
     position: fixed;
@@ -49,6 +49,7 @@ export const styles = css`
         display: inline;
         padding: 0.25rem;
         box-decoration-break: clone;
+        color: #231f20;
         margin: 0;
         white-space: pre-wrap;
       }

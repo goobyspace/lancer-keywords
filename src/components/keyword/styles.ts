@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
-// all colours are either colour picked from the core book
-// or grabbed from https://valkyrion.itch.io/lancer-rpg-template
+// all colours are colour picked from the core book
+// or chosen to match the style of the core book
 // hover-underline-animation is from https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets/css/s/hover-underline-animation.md
 export const styles = css`
   :host {
