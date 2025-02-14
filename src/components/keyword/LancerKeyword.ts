@@ -3,6 +3,7 @@ import { property } from 'lit/decorators.js';
 import { keyword } from '../../types.js';
 import { styles } from './styles.js';
 import '../card/LancerCard.js';
+import { Categories } from '../../categories.js';
 
 export class LancerKeyword extends LitElement {
   static styles = styles;
@@ -13,6 +14,25 @@ export class LancerKeyword extends LitElement {
     page: '',
     category: '',
   };
+
+  @property({ type: String }) alt = '';
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.alt.length > 0) {
+      if (this.alt.includes('/')) {
+        const [category, name] = this.alt.split('/');
+
+        const selectedCategory = Categories[category];
+        if (selectedCategory) {
+          const selectedKeyword = selectedCategory.keywords[name];
+          if (selectedKeyword) {
+            this.keyword = selectedKeyword;
+          }
+        }
+      }
+    }
+  }
 
   cards: TemplateResult[] = [];
 
@@ -34,7 +54,7 @@ export class LancerKeyword extends LitElement {
         @keydown=${(e: KeyboardEvent) =>
           e.key === 'Enter' && this.clickHandler(new MouseEvent('click'))}
         tabindex="0"
-        >${this.keyword.name}</span
+        ><slot>${this.keyword.name}</slot></span
       >${this.cards.map(card => card)}`;
   }
 }

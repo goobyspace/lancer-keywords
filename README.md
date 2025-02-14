@@ -15,10 +15,32 @@ npm i lancer-keyword
   import { Categories } from 'lancer-keyword';
 </script>
 
-<lancer-keyword keyword={Categories.attacks.keywords.tech_attack}></lancer-keyword>
+<lancer-keyword .keyword={Categories.attacks.keywords.tech_attack}></lancer-keyword>
 ```
 
-To use with frameworks like React, you might need adapters for web components like [@lit/react](https://github.com/lit/lit/tree/main/packages/react)
+### Slots
+To use an alternative keyword, simply type it in the HTML slot.
+```html
+<script type="module">
+  import { Categories } from 'lancer-keyword';
+</script>
+
+<lancer-keyword .keyword={Categories.attacks.keywords.tech_attack}>Alternative Keyword</lancer-keyword>
+```
+
+### Cannot use objects?
+If you cannot use JS objects within your HTML, you can type in the keyword category & keyword manually, seperated by a '/' into the 'alt' attribute.
+```html
+<script type="module">
+  import from 'lancer-keyword';
+</script>
+
+<lancer-keyword alt="attacks/tech_attack"></lancer-keyword>
+```
+
+### Frameworks
+
+To use with frameworks like React, you might need adapters for web components like [@lit/react](https://github.com/lit/lit/tree/main/packages/react), or you might need to add definitions or otherwise edit configs. Check with your framework's documentation.
 
 ## Local Development with `web-dev-server`
 
@@ -28,7 +50,7 @@ First, make sure to install all the node modules:
 npm install
 ```
 
-Once you've done so, open two terminals, and run each command seperately:
+Once you've done so, open two terminals, and run each of these commands seperately:
 
 ```bash
 npm run watch
@@ -67,29 +89,8 @@ To run the tests in interactive watch mode run:
 npm run test:watch
 ```
 
-## Demoing with Storybook
-
-To run a local instance of Storybook for your component, run
-
-```bash
-npm run storybook
-```
-
-To build a production version of Storybook, run
-
-```bash
-npm run storybook:build
-```
-
-
-## Tooling configs
-
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
-
-If you customize the configuration a lot, you can consider moving them to individual files.
-
 This repository was created via [open-wc](https://github.com/open-wc/open-wc).
 
-Lancer-keywords is not an official Lancer product; it is a third party work, and is not affiliated with Massif Press. Lancer-keywords is published via the Lancer Third Party License.
+"Lancer-keywords" is not an official Lancer product; it is a third party work, and is not affiliated with Massif Press. "Lancer-keywords" is published via the _Lancer_ Third Party License.
 
-Lancer is copyright Massif Press
+_Lancer_ is copyright Massif Press
