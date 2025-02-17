@@ -3,7 +3,7 @@
   "description": "Web component that lets you see info cards for keywords from the Lancer TTRPG",
   "license": "MIT",
   "author": "lancer-keyword",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "type": "module",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
