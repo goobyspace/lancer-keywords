@@ -21,6 +21,21 @@ export enum BooksEnum {
 
 export enum CategoriesEnum {
   'Attacks' = 'attacks',
-  'Modifiers' = 'modifiers',
-  'Stats' = 'stats',
+  'Bonuses' = 'bonuses',
+  'Combat' = 'combat',
+  'Movement' = 'movement',
+  'Pilot' = 'pilot',
+  'Mech' = 'mech',
+  'Full Action' = 'fullAction',
+  'Quick Action' = 'quickAction',
+  'Other Action' = 'otherAction',
+  'Tech Action' = 'techAction',
+  'Reaction' = 'reaction',
+  'Harm' = 'harm',
+  'Status' = 'status',
+  'Condition' = 'condition',
+  'Weapon' = 'weapon',
+  'Pilot Gear' = 'pilotGear',
+  'AI' = 'ai',
+  'Gear' = 'gear',
 }

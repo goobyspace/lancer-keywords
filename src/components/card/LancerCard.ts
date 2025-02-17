@@ -1,8 +1,8 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { keyword } from '../../types.js';
+import { keyword } from '../../utility/types.js';
 import { styles } from './styles.js';
-import { Categories } from '../../categories.js';
+import { Categories } from '../../utility/categories.js';
 
 export class LancerCard extends LitElement {
   @property({ type: Object }) keyword: keyword = {
@@ -97,8 +97,8 @@ export class LancerCard extends LitElement {
       if (item === '') {
         return html``;
       }
-      if (item.includes('/')) {
-        const [category, name] = item.split('/');
+      if (item.includes('#')) {
+        const [category, name, alt] = item.split('#');
 
         const selectedCategory = Categories[category];
         if (!selectedCategory) {
@@ -111,8 +111,10 @@ export class LancerCard extends LitElement {
         }
 
         return html`<span
-          ><lancer-keyword .keyword=${selectedKeyword}></lancer-keyword
-        ></span>`;
+          ><lancer-keyword .keyword=${selectedKeyword}
+            >${alt}</lancer-keyword
+          ></span
+        >`;
       }
       return html`${item}`;
     });
@@ -128,7 +130,9 @@ export class LancerCard extends LitElement {
           @keydown=${this.propagateClick}
         ></div>
         <div
-          class="lancer-card lancer-card-${this.keyword.category}"
+          class="lancer-card lancer-card-${this.keyword.category
+            .toLowerCase()
+            .replace(' ', '')}"
           style="top: ${this.y}px; left: ${this.x}px;"
         >
           <div class="lancer-card-header">

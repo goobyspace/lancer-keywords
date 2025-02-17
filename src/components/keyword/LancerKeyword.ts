@@ -1,9 +1,9 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
-import { keyword } from '../../types.js';
+import { keyword } from '../../utility/types.js';
 import { styles } from './styles.js';
 import '../card/LancerCard.js';
-import { Categories } from '../../categories.js';
+import { Categories } from '../../utility/categories.js';
 
 export class LancerKeyword extends LitElement {
   static styles = styles;
@@ -49,7 +49,9 @@ export class LancerKeyword extends LitElement {
 
   render() {
     return html`<span
-        class="lancer-keyword lancer-keyword-${this.keyword.category}"
+        class="lancer-keyword lancer-keyword-${this.keyword.category
+          .toLowerCase()
+          .replace(' ', '')}"
         @click=${this.clickHandler}
         @keydown=${(e: KeyboardEvent) =>
           e.key === 'Enter' && this.clickHandler(new MouseEvent('click'))}
