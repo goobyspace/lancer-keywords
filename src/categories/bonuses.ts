@@ -1,9 +1,8 @@
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { bonusesKeywords } from './bonusesKeywords.js';
+import { bonusesKeywords, bonuses as bonusesType } from './bonusesKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 
-export const bonuses: category = {
+export const bonuses: bonusesType = {
   keywords: {
     bonuses: {
       name: 'BONUSES',

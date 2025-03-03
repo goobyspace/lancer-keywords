@@ -1,9 +1,9 @@
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { combatKeywords } from './combatKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
+import { pilotGear as pilotGearType } from './pilotGearKeywords.js';
 
-export const pilotGear: category = {
+export const pilotGear: pilotGearType = {
   keywords: {
     archaic: {
       name: 'archaic',

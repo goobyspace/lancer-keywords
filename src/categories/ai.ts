@@ -1,7 +1,6 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { aiKeywords } from './aiKeywords.js';
+import { aiKeywords, ai as aiType } from './aiKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
@@ -9,7 +8,7 @@ import { mechKeywords } from './mechKeywords.js';
 import { otherActionKeywords } from './otherActionKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 
-export const ai: category = {
+export const ai: aiType = {
   keywords: {
     comp_con: {
       name: 'comp/con',

@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const weaponKeywords = {
   size: `$${CategoriesEnum.Weapon}#size$`,
@@ -15,6 +16,23 @@ export const weaponKeywords = {
   cannon: `$${CategoriesEnum.Weapon}#cannon$`,
   nexus: `$${CategoriesEnum.Weapon}#nexus$`,
   patterns: `$${CategoriesEnum.Weapon}#patterns$`,
-  burn: `$${CategoriesEnum.Weapon}#burn$`,
-  heat: `$${CategoriesEnum.Weapon}#heat$`,
 };
+
+export interface weapon extends category {
+  keywords: {
+    size: keyword;
+    type: keyword;
+    damage: keyword;
+    auxiliary: keyword;
+    superheavy: keyword;
+    main: keyword;
+    heavy: keyword;
+    melee: keyword;
+    cqb: keyword;
+    rifle: keyword;
+    launcher: keyword;
+    cannon: keyword;
+    nexus: keyword;
+    patterns: keyword;
+  };
+}

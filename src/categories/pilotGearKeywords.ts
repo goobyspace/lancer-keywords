@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const pilotGearKeywords = {
   archaic: `$${CategoriesEnum['Pilot Gear']}#archaic$`,
@@ -6,3 +7,12 @@ export const pilotGearKeywords = {
   gear: `$${CategoriesEnum['Pilot Gear']}#gear$`,
   sidearm: `$${CategoriesEnum['Pilot Gear']}#sidearm$`,
 };
+
+export interface pilotGear extends category {
+  keywords: {
+    archaic: keyword;
+    personal_armor: keyword;
+    gear: keyword;
+    sidearm: keyword;
+  };
+}

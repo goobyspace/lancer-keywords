@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 // we surround other keywords with $ since the $ sign doesn't occur in the core book, then we go $#category/keyword$
 // we split the text on the $ sign and then filter on the # to see what is a keyword and what isnt
@@ -33,3 +34,37 @@ export const combatKeywords = {
   saves: `$${CategoriesEnum.Combat}#saves$`,
   contested_skill_check: `$${CategoriesEnum.Combat}#contested_skill_check$`,
 };
+
+export interface combat extends category {
+  keywords: {
+    movement: keyword;
+    critical_hits: keyword;
+    range: keyword;
+    threat: keyword;
+    line_of_sight: keyword;
+    cover: keyword;
+    soft_cover: keyword;
+    hard_cover: keyword;
+    invisibility: keyword;
+    actions: keyword;
+    full_action: keyword;
+    quick_action: keyword;
+    other_action: keyword;
+    turn: keyword;
+    round: keyword;
+    scene: keyword;
+    action_resolution: keyword;
+    end_of_turn: keyword;
+    end_of_next_turn: keyword;
+    overcharge: keyword;
+    reactions: keyword;
+    free_action: keyword;
+    attack: keyword;
+    status: keyword;
+    condition: keyword;
+    electronic_warfare: keyword;
+    skill_check: keyword;
+    saves: keyword;
+    contested_skill_check: keyword;
+  };
+}

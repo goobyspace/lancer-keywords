@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const mechKeywords = {
   frame: `$${CategoriesEnum.Mech}#frame$`,
@@ -32,3 +33,38 @@ export const mechKeywords = {
   integrated_mount: `$${CategoriesEnum.Mech}#integrated_mount$`,
   superheavy_mount: `$${CategoriesEnum.Mech}#superheavy_mount$`,
 };
+
+export interface mech extends category {
+  keywords: {
+    frame: keyword;
+    mech_stats: keyword;
+    hp: keyword;
+    structure: keyword;
+    structure_damage_table: keyword;
+    repair_cap: keyword;
+    speed: keyword;
+    evasion: keyword;
+    sensors: keyword;
+    tech_attack: keyword;
+    e_defense: keyword;
+    heat_cap: keyword;
+    stress: keyword;
+    save_target: keyword;
+    weapon: keyword;
+    systems: keyword;
+    system_points: keyword;
+    core_power: keyword;
+    size: keyword;
+    repair: keyword;
+    full_repair: keyword;
+    rest: keyword;
+    mounts: keyword;
+    main_mount: keyword;
+    heavy_mount: keyword;
+    aux_aux_mount: keyword;
+    main_aux_mount: keyword;
+    flexible_mount: keyword;
+    integrated_mount: keyword;
+    superheavy_mount: keyword;
+  };
+}

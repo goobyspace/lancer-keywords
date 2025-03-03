@@ -1,7 +1,6 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
@@ -12,8 +11,9 @@ import { quickActionKeywords } from './quickActionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { techActionKeywords } from './techActionKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
+import { fullAction as fullActionType } from './fullActionKeywords.js';
 
-export const fullAction: category = {
+export const fullAction: fullActionType = {
   keywords: {
     barrage: {
       name: 'barrage',
@@ -43,7 +43,7 @@ export const fullAction: category = {
       page: `${BooksEnum.Core}:[71]`,
       category: 'full action',
       text: `When you make an improvised attack, you attack with a rifle butt, fist, or another improvised melee weapon. You can use anything from the butt of a ${mechKeywords.weapon} to a slab of concrete or a length of hull plating - the flavor of the attack is up to you!
-      \nTo make an improvised attack, make a ${attackKeywords.melee_attack} against an ${altText(movementKeywords.adjacency, 'adjacent')} target. On success they take 1d6 ${harmKeywords.kinetic} ${harmKeywords.damage}.`,
+      \nTo make an improvised attack, make a ${attacksKeywords.melee_attack} against an ${altText(movementKeywords.adjacency, 'adjacent')} target. On success they take 1d6 ${harmKeywords.kinetic} ${harmKeywords.damage}.`,
     },
     stabilize: {
       name: 'stabilize',

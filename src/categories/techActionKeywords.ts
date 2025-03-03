@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 // we surround other keywords with $ since the $ sign doesn't occur in the core book, then we go $#category/keyword$
 // we split the text on the $ sign and then filter on the # to see what is a keyword and what isnt
@@ -11,3 +12,14 @@ export const techActionKeywords = {
   fragment_signal: `$${CategoriesEnum['Tech Action']}#fragment_signal$`,
   tech_actions: `$${CategoriesEnum['Tech Action']}#tech_actions$`,
 };
+
+export interface techAction extends category {
+  keywords: {
+    bolster: keyword;
+    scan: keyword;
+    lock_on: keyword;
+    invade: keyword;
+    fragment_signal: keyword;
+    tech_actions: keyword;
+  };
+}

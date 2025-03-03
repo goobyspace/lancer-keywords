@@ -1,13 +1,13 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
+import { reaction as reactionType } from './reactionKeywords.js';
 
-export const reaction: category = {
+export const reaction: reactionType = {
   keywords: {
     brace: {
       name: 'brace',
@@ -24,7 +24,7 @@ export const reaction: category = {
       category: 'reaction',
       text: `1/round
       \nTrigger: A hostile character starts any ${combatKeywords.movement} (including ${quickActionKeywords.boost} and other ${combatKeywords.actions}) inside one of your ${altText(mechKeywords.weapon, 'weapons')} ${combatKeywords.threat}. Unless specified otherwise, all weapons default to 1 ${combatKeywords.threat}.
-      \nEffect: Trigger Overwatch, immediately using that ${mechKeywords.weapon} to ${quickActionKeywords.skirmish} against that character as a ${altText(combatKeywords.reactions, 'reaction')}, before they move.`,
+      \nEffect: Trigger overwatch, immediately using that ${mechKeywords.weapon} to ${quickActionKeywords.skirmish} against that character as a ${altText(combatKeywords.reactions, 'reaction')}, before they move.`,
     },
   },
 };

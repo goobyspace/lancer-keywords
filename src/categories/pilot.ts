@@ -1,7 +1,6 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
@@ -12,14 +11,14 @@ import { mechKeywords } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
 import { otherActionKeywords } from './otherActionKeywords.js';
 import { pilotGearKeywords } from './pilotGearKeywords.js';
-import { pilotKeywords } from './pilotKeywords.js';
+import { pilotKeywords, pilot as pilotType } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { reactionKeywords } from './reactionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
 // generic combat concepts go here
-export const pilot: category = {
+export const pilot: pilotType = {
   keywords: {
     mech_skills: {
       name: 'MECH SKILLS',
@@ -100,15 +99,15 @@ export const pilot: category = {
       category: 'pilot',
       text: `When a pilot is outside of a mech during mech combat, they follow the same pool of ${combatKeywords.actions} as mechs: one standard ${altText(combatKeywords.movement, 'move')}, and two ${altText(combatKeywords.quick_action, 'quick actions')} or one ${combatKeywords.full_action}. 
       \nYou can split your actions between pilot and mech, too, if you so choose. For example: Take a ${combatKeywords.quick_action} to ${quickActionKeywords.skirmish} with your mech, take a ${combatKeywords.quick_action} to ${otherActionKeywords.eject}. and then use your ${altText(combatKeywords.movement, 'move')} to run to cover on foot.
-      \nPilots have access to the following normal actions: ${quickActionKeywords.boost}, ${quickActionKeywords.hide}, ${quickActionKeywords.search}, ${otherActionKeywords.activate}, ${otherActionKeywords.activate}, ${fullActionKeywords.disengage}, ${otherActionKeywords.prepare}, & ${otherActionKeywords.mount}. Pilots can also use the ${reactionKeywords.Overwatch} ${altText(combatKeywords.reactions, 'reaction')}, and use the ${pilotKeywords.fight} action when they do so.
+      \nPilots have access to the following normal actions: ${quickActionKeywords.boost}, ${quickActionKeywords.hide}, ${quickActionKeywords.search}, ${otherActionKeywords.activate}, ${otherActionKeywords.activate}, ${fullActionKeywords.disengage}, ${otherActionKeywords.prepare}, & ${otherActionKeywords.mount}. Pilots can also use the ${reactionKeywords.overwatch} ${altText(combatKeywords.reactions, 'reaction')}, and use the ${pilotKeywords.fight} action when they do so.
       \nThey also have access to three special pilot actions: ${pilotKeywords.fight}, ${pilotKeywords.jockey}, & ${pilotKeywords.reload}.`,
     },
     fight: {
       name: 'FIGHT',
       page: `${BooksEnum.Core}:[74]`,
       category: 'pilot',
-      text: `When you fight, you ${combatKeywords.attack} (${altText(attackKeywords.melee_attack, 'melee')} or ${altText(attackKeywords.ranged_attack, 'ranged')}) with one ${mechKeywords.weapon} as a ${combatKeywords.full_action}.
-      \nTo fight, choose a ${mechKeywords.weapon} and attack a target within ${combatKeywords.range} or ${combatKeywords.threat} and ${combatKeywords.line_of_sight} as a ${combatKeywords.full_action}. ${altText(attackKeywords.ranged_attack, 'ranged attacks')} are affected by ${combatKeywords.cover} and receive +1 ${bonusesKeywords.difficulty} if you're ${statusKeywords.engaged}.`,
+      text: `When you fight, you ${combatKeywords.attack} (${altText(attacksKeywords.melee_attack, 'melee')} or ${altText(attacksKeywords.ranged_attack, 'ranged')}) with one ${mechKeywords.weapon} as a ${combatKeywords.full_action}.
+      \nTo fight, choose a ${mechKeywords.weapon} and attack a target within ${combatKeywords.range} or ${combatKeywords.threat} and ${combatKeywords.line_of_sight} as a ${combatKeywords.full_action}. ${altText(attacksKeywords.ranged_attack, 'ranged attacks')} are affected by ${combatKeywords.cover} and receive +1 ${bonusesKeywords.difficulty} if you're ${statusKeywords.engaged}.`,
     },
     jockey: {
       name: 'JOCKEY',

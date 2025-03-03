@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const pilotKeywords = {
   mech_skills: `$${CategoriesEnum.Pilot}#mech_skills$`,
@@ -17,3 +18,23 @@ export const pilotKeywords = {
   license_level: `$${CategoriesEnum.Pilot}#license_level$`,
   core_bonuses: `$${CategoriesEnum.Pilot}#core_bonuses$`,
 };
+
+export interface pilot extends category {
+  keywords: {
+    mech_skills: keyword;
+    pilot_mech_stats: keyword;
+    hull: keyword;
+    agility: keyword;
+    systems: keyword;
+    engineering: keyword;
+    grit: keyword;
+    talents: keyword;
+    triggers: keyword;
+    pilot_actions: keyword;
+    fight: keyword;
+    jockey: keyword;
+    reload: keyword;
+    license_level: keyword;
+    core_bonuses: keyword;
+  };
+}

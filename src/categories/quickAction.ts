@@ -1,7 +1,6 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
@@ -9,12 +8,15 @@ import { gearKeywords } from './gearKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
-import { quickActionKeywords } from './quickActionKeywords.js';
+import {
+  quickActionKeywords,
+  quickAction as quickActionType,
+} from './quickActionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { techActionKeywords } from './techActionKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
-export const quickAction: category = {
+export const quickAction: quickActionType = {
   keywords: {
     boost: {
       name: 'barrage',
@@ -27,7 +29,7 @@ export const quickAction: category = {
       page: `${BooksEnum.Core}:[69]`,
       category: 'quick action',
       text: `When you grapple, you try to grab hold of a target and overpower them - disarming, subduing, or damaging them so they can't do the same to you.
-      \nTo grapple, choose an ${altText(movementKeywords.adjacency, 'adjacent')} character and make a ${attackKeywords.melee_attack}. On a hit:
+      \nTo grapple, choose an ${altText(movementKeywords.adjacency, 'adjacent')} character and make a ${attacksKeywords.melee_attack}. On a hit:
       \nBoth characters become ${statusKeywords.engaged};
       Neither character can ${quickActionKeywords.boost} or take ${combatKeywords.reactions} for the duration of the grapple;
       The smaller character becomes ${conditionKeywords.immobilized} but moves when the larger party moves, mirroring their ${combatKeywords.movement}. If both parties are the same ${mechKeywords.size}, either can make ${altText(combatKeywords.contested_skill_check, 'contested')} ${pilotKeywords.hull} checks at the start of their turn: the winner counts as larger than the loser until the contest is repeated.
@@ -47,7 +49,7 @@ export const quickAction: category = {
       \nIf you are ${altText(combatKeywords.invisibility, 'invisible')}, you can always hide, regardless of ${combatKeywords.cover}, unless you're ${statusKeywords.engaged}.
       \nThe exact location of hidden targets cannot be identified and they cannot be targeted directly by attacks or hostile actions, but they can still be hit by attacks that affect an area. Although NPCs cannot perfectly locate a hidden character, they might still know an approximate location. Thus, an NPC could flush an area with a flamethrower, even if they don't know exactly where a hidden player is lurking.
       \nAdditionally, other characters ignore ${movementKeywords.engagement} with you while you are ${statusKeywords.hidden} - it's assumed you're trying to stay stealthy.
-      \nYou cease to be ${statusKeywords.hidden} if you make an ${combatKeywords.attack}, (${altText(attackKeywords.melee_attack, 'melee')}, ${altText(attackKeywords.ranged_attack, 'ranged')}, or ${altText(attackKeywords.tech_attack, 'tech')}) or if your mech takes a hostile action (such as forcing a target to make a ${altText(combatKeywords.saves, 'save')}). Using ${quickActionKeywords.boost} or taking ${combatKeywords.reactions} with your mech also causes you to lose ${statusKeywords.hidden}. Other actions can be taken as normal.
+      \nYou cease to be ${statusKeywords.hidden} if you make an ${combatKeywords.attack}, (${altText(attacksKeywords.melee_attack, 'melee')}, ${altText(attacksKeywords.ranged_attack, 'ranged')}, or ${altText(attacksKeywords.tech_attack, 'tech')}) or if your mech takes a hostile action (such as forcing a target to make a ${altText(combatKeywords.saves, 'save')}). Using ${quickActionKeywords.boost} or taking ${combatKeywords.reactions} with your mech also causes you to lose ${statusKeywords.hidden}. Other actions can be taken as normal.
       \nYou also immediately lose ${statusKeywords.hidden} if your ${combatKeywords.cover} disappears or is destroyed, or if you lose ${combatKeywords.cover} due to ${combatKeywords.line_of_sight} (e.g., if a mech ${altText(movementKeywords.jumping, 'jumps')} over a wall and can now draw an unbroken line of ${combatKeywords.line_of_sight} to you). If you're ${statusKeywords.hidden} while ${statusKeywords.invisible}, you lose ${statusKeywords.hidden} when you cease to be ${statusKeywords.invisible} unless you are in ${combatKeywords.cover}.`,
     },
     quick_tech: {
@@ -62,8 +64,8 @@ export const quickAction: category = {
       name: 'ram',
       page: `${BooksEnum.Core}:[70]`,
       category: 'quick action',
-      text: `When you ram, you make a ${attackKeywords.melee_attack} with the aim of knocking a target down or back.
-      \nTo ram, make a ${attackKeywords.melee_attack} against an ${altText(movementKeywords.adjacency, 'adjacent')} character the same ${mechKeywords.size} or smaller than you. On a success, your target is knocked ${statusKeywords.prone} and you may also choose to knock them back by one space, directly away from you.`,
+      text: `When you ram, you make a ${attacksKeywords.melee_attack} with the aim of knocking a target down or back.
+      \nTo ram, make a ${attacksKeywords.melee_attack} against an ${altText(movementKeywords.adjacency, 'adjacent')} character the same ${mechKeywords.size} or smaller than you. On a success, your target is knocked ${statusKeywords.prone} and you may also choose to knock them back by one space, directly away from you.`,
     },
     search: {
       name: 'search',

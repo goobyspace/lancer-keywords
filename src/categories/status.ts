@@ -1,8 +1,7 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { aiKeywords } from './aiKeywords.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
@@ -14,11 +13,11 @@ import { otherActionKeywords } from './otherActionKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { reactionKeywords } from './reactionKeywords.js';
-import { statusKeywords } from './statusKeywords.js';
+import { statusKeywords, status as statusType } from './statusKeywords.js';
 import { techActionKeywords } from './techActionKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
-export const status: category = {
+export const status: statusType = {
   keywords: {
     danger_zone: {
       name: 'brace',
@@ -36,7 +35,7 @@ export const status: category = {
       name: 'engaged',
       page: `${BooksEnum.Core}:[77]`,
       category: 'status',
-      text: `If a character moves ${altText(movementKeywords.adjacency, 'adjacent')} to a hostile character, they both gain the engaged ${combatKeywords.status} for as long as they remain ${altText(movementKeywords.adjacency, 'adjacent')} to one another. ${altText(attackKeywords.ranged_attack, 'ranged attacks')} made by engaged characters receive +1 ${bonusesKeywords.difficulty}. Additionally, characters that become engaged by targets of equal or greater ${mechKeywords.size} during the course of a ${combatKeywords.movement} must stop moving immediately and lose any unused movement.`,
+      text: `If a character moves ${altText(movementKeywords.adjacency, 'adjacent')} to a hostile character, they both gain the engaged ${combatKeywords.status} for as long as they remain ${altText(movementKeywords.adjacency, 'adjacent')} to one another. ${altText(attacksKeywords.ranged_attack, 'ranged attacks')} made by engaged characters receive +1 ${bonusesKeywords.difficulty}. Additionally, characters that become engaged by targets of equal or greater ${mechKeywords.size} during the course of a ${combatKeywords.movement} must stop moving immediately and lose any unused movement.`,
     },
     exposed: {
       name: 'exposed',
@@ -62,7 +61,7 @@ export const status: category = {
       page: `${BooksEnum.Core}:[77]`,
       category: 'status',
       text: `Attacks against prone targets receive +1 ${bonusesKeywords.accuracy}.
-      \nAdditionally, prone characters are ${conditionKeywords.slowed} and count as moving in difficult ${movementKeywords.terrain}. Characters can remove prone by standing up instead of taking their standard ${altText(combatKeywords.movement, 'move')}, unless they're ${conditionKeywords.immobilized}. Standing up doesn't count as ${combatKeywords.movement}, so doesn't trigger ${reactionKeywords.Overwatch} or other effects.`,
+      \nAdditionally, prone characters are ${conditionKeywords.slowed} and count as moving in difficult ${movementKeywords.terrain}. Characters can remove prone by standing up instead of taking their standard ${altText(combatKeywords.movement, 'move')}, unless they're ${conditionKeywords.immobilized}. Standing up doesn't count as ${combatKeywords.movement}, so doesn't trigger ${reactionKeywords.overwatch} or other effects.`,
     },
     shut_down: {
       name: 'shut down',
@@ -72,7 +71,7 @@ export const status: category = {
       \nAll ${harmKeywords.heat} is cleared, as is ${statusKeywords.exposed};
       Any ${altText(aiKeywords.cascade, 'cascading')} ${altText(aiKeywords.nhp, 'NHPs')} return to a normal state.;
       Any statuses or conditions affecting the mech caused by ${techActionKeywords.tech_actions}, such as ${conditionKeywords.lock_on}, immediately end;
-      The mech gains ${harmKeywords.immunity} to all ${techActionKeywords.tech_actions} and ${altText(attackKeywords.tech_attack, 'attacks')}, including any from allied characters;
+      The mech gains ${harmKeywords.immunity} to all ${techActionKeywords.tech_actions} and ${altText(attacksKeywords.tech_attack, 'attacks')}, including any from allied characters;
       The mech is ${conditionKeywords.stunned} indefinitely. Nothing can prevent this ${combatKeywords.condition}, and it remains until the mech ceases to be ${statusKeywords.shut_down}.
       \nThe only way to remove the ${statusKeywords.shut_down} ${combatKeywords.status} is to ${otherActionKeywords.boot_up} the mech.`,
     },

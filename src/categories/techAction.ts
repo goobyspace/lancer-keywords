@@ -1,16 +1,18 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
-import { techActionKeywords } from './techActionKeywords.js';
+import {
+  techActionKeywords,
+  techAction as techActionType,
+} from './techActionKeywords.js';
 
-export const techAction: category = {
+export const techAction: techActionType = {
   keywords: {
     bolster: {
       name: 'bolster',
@@ -42,7 +44,7 @@ export const techAction: category = {
       name: 'invade',
       page: `${BooksEnum.Core}:[70]`,
       category: 'tech action',
-      text: `When you Invade, you mount a direct electronic attack against a target. To Invade, make a ${attackKeywords.tech_attack} against a characters within ${mechKeywords.sensors} and ${combatKeywords.line_of_sight}. On a success, your target takes ${harmKeywords.heat} and you choose one of the invasion options available to you.
+      text: `When you Invade, you mount a direct electronic attack against a target. To Invade, make a ${attacksKeywords.tech_attack} against a characters within ${mechKeywords.sensors} and ${combatKeywords.line_of_sight}. On a success, your target takes ${harmKeywords.heat} and you choose one of the invasion options available to you.
       \nThe only invasion option available by default to all characters is ${techActionKeywords.fragment_signal}, other options are gained through ${mechKeywords.systems} and equipment.
       \nYou can also Invade willing allied characters to create certain effects. If your target is willing and allies, you are automatically succesful, it doesn't count as an ${combatKeywords.attack}, and your target doesn't take any ${harmKeywords.heat}.`,
     },

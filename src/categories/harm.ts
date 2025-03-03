@@ -1,12 +1,11 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
-import { harmKeywords } from './harmKeywords.js';
+import { harmKeywords, harm as harmType } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
 import { otherActionKeywords } from './otherActionKeywords.js';
@@ -14,7 +13,7 @@ import { pilotKeywords } from './pilotKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
-export const harm: category = {
+export const harm: harmType = {
   keywords: {
     damage: {
       name: 'damage',
@@ -79,7 +78,7 @@ export const harm: category = {
       name: 'bonus damage',
       page: `${BooksEnum.Core}:[67]`,
       category: 'harm',
-      text: `Some ${pilotKeywords.talents}, ${mechKeywords.systems} and ${altText(mechKeywords.weapon, 'weapons')} deal bonus damage. Bonus damage can only apply to ${altText(attackKeywords.melee_attack, 'melee')} and ${altText(attackKeywords.ranged_attack, 'ranged')} attacks, and is only every ${harmKeywords.kinetic}, ${harmKeywords.explosive}}, or ${harmKeywords.energy} ${harmKeywords.damage} (not ${harmKeywords.burn} or ${harmKeywords.heat}).
+      text: `Some ${pilotKeywords.talents}, ${mechKeywords.systems} and ${altText(mechKeywords.weapon, 'weapons')} deal bonus damage. Bonus damage can only apply to ${altText(attacksKeywords.melee_attack, 'melee')} and ${altText(attacksKeywords.ranged_attack, 'ranged')} attacks, and is only every ${harmKeywords.kinetic}, ${harmKeywords.explosive}}, or ${harmKeywords.energy} ${harmKeywords.damage} (not ${harmKeywords.burn} or ${harmKeywords.heat}).
       \nIf no type is specified, bonus damage defaults to ${harmKeywords.kinetic} ${harmKeywords.damage}, or the attacker can choose a type from one of the same ${altText(weaponKeywords.type, 'types')} as the ${mechKeywords.weapon} that dealt it.
       \nIf an attack that targets more than one character deals bonus damage, the bonus damage is halved.`,
     },
@@ -89,7 +88,7 @@ export const harm: category = {
       category: 'harm',
       text: `Some characters and objects have immunity, and can't be affected by certain ${harmKeywords.damage} types, ${altText(combatKeywords.attack, 'attacks')}, or effects. Immunity goes beyond simply ignoring damage - effects or ${combatKeywords.actions} that a character has immunity to are completely ignored, and may as well have failed or not having taken place at all.
       \nFor example, a character with immunity to ${harmKeywords.burn} doesn't take any ${harmKeywords.burn} from attacks and never counts as having taken ${harmKeywords.burn} for the purpose of any other effects. 
-      \nLikewise, a character with immunity to ${harmKeywords.damage} never takes damage (even 0 damage), and a character with immunity to ${attackKeywords.tech_attack} can't be affected by any tech attacks.`,
+      \nLikewise, a character with immunity to ${harmKeywords.damage} never takes damage (even 0 damage), and a character with immunity to ${attacksKeywords.tech_attack} can't be affected by any tech attacks.`,
     },
     damaging_objects: {
       name: 'damaging objects',

@@ -1,6 +1,5 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
@@ -8,13 +7,16 @@ import { fullActionKeywords } from './fullActionKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
-import { movementKeywords } from './movementKeywords.js';
+import {
+  movementKeywords,
+  movement as movementType,
+} from './movementKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { reactionKeywords } from './reactionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 
-export const movement: category = {
+export const movement: movementType = {
   keywords: {
     obstruction: {
       name: 'obstruction',
@@ -43,7 +45,7 @@ export const movement: category = {
       category: 'movement',
       text: `If a character moves ${altText(movementKeywords.adjacency, 'adjacent')} to a hostile character, they both gain the ${statusKeywords.engaged} status as long as they remain ${altText(movementKeywords.adjacency, 'adjacent')} to one another. Ranged attacks made by an ${statusKeywords.engaged} character receive +1 ${bonusesKeywords.difficulty}.
       \nAdditionally, characters that become ${statusKeywords.engaged} by characters of equal or greater ${mechKeywords.size} during the course of a ${combatKeywords.movement} action stop moving immediately and lose any unused ${combatKeywords.movement}. 
-      \nAfter you have become engaged ${statusKeywords.engaged} with a character, you may make further move actions as normal and moving into other adjacent spaces does not stop your movement, though beginning a ${altText(combatKeywords.movement, 'move')} within that character's ${combatKeywords.threat} may provoke ${combatKeywords.reactions} such as ${reactionKeywords.Overwatch}.`,
+      \nAfter you have become engaged ${statusKeywords.engaged} with a character, you may make further move actions as normal and moving into other adjacent spaces does not stop your movement, though beginning a ${altText(combatKeywords.movement, 'move')} within that character's ${combatKeywords.threat} may provoke ${combatKeywords.reactions} such as ${reactionKeywords.overwatch}.`,
     },
     terrain: {
       name: 'terrain',

@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const gearKeywords = {
   accurate: `$${CategoriesEnum.Gear}#accurate$`,
@@ -27,3 +28,33 @@ export const gearKeywords = {
   tags: `$${CategoriesEnum.Gear}#tags$`,
   limited_x: `$${CategoriesEnum.Gear}#limited_x$`,
 };
+
+export interface gear extends category {
+  keywords: {
+    accurate: keyword;
+    arcing: keyword;
+    armor_piercing: keyword;
+    inaccurate: keyword;
+    knockback: keyword;
+    loading: keyword;
+    ordnance: keyword;
+    overkill: keyword;
+    overshield: keyword;
+    reliable_x: keyword;
+    seeking: keyword;
+    smart: keyword;
+    threat_x: keyword;
+    thrown_x: keyword;
+    deployable: keyword;
+    drone: keyword;
+    grenade: keyword;
+    mine: keyword;
+    mod: keyword;
+    protocol: keyword;
+    shield: keyword;
+    unique: keyword;
+    ai: keyword;
+    tags: keyword;
+    limited_x: keyword;
+  };
+}

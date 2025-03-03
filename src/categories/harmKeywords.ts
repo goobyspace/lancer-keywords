@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 // we surround other keywords with $ since the $ sign doesn't occur in the core book, then we go $#category/keyword$
 // we split the text on the $ sign and then filter on the # to see what is a keyword and what isnt
@@ -21,3 +22,25 @@ export const harmKeywords = {
   destroyed: `$${CategoriesEnum.Harm}#destroyed$`,
   printing: `$${CategoriesEnum.Harm}#printing$`,
 };
+
+export interface harm extends category {
+  keywords: {
+    damage: keyword;
+    armor: keyword;
+    resistance: keyword;
+    burn: keyword;
+    explosive: keyword;
+    energy: keyword;
+    kinetic: keyword;
+    heat: keyword;
+    bonus_damage: keyword;
+    immunity: keyword;
+    damaging_objects: keyword;
+    overheating: keyword;
+    reactor_meltdown: keyword;
+    cooling: keyword;
+    overheating_table: keyword;
+    destroyed: keyword;
+    printing: keyword;
+  };
+}

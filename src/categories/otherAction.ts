@@ -1,22 +1,24 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { aiKeywords } from './aiKeywords.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
-import { otherActionKeywords } from './otherActionKeywords.js';
+import {
+  otherActionKeywords,
+  otherAction as otherActionType,
+} from './otherActionKeywords.js';
 import { pilotGearKeywords } from './pilotGearKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { techActionKeywords } from './techActionKeywords.js';
 
-export const otherAction: category = {
+export const otherAction: otherActionType = {
   keywords: {
     activate: {
       name: 'activate',
@@ -77,7 +79,7 @@ export const otherAction: category = {
       All ${harmKeywords.heat} is cleared, as is ${statusKeywords.exposed};
       Any ${altText(aiKeywords.cascade, 'cascading')} ${altText(aiKeywords.nhp, 'NHPs')} return to a normal state.;
       Any statuses or conditions affecting the mech caused by ${techActionKeywords.tech_actions}, such as ${conditionKeywords.lock_on}, immediately end;
-      The mech gains ${harmKeywords.immunity} to all ${techActionKeywords.tech_actions} and ${altText(attackKeywords.tech_attack, 'attacks')}, including any from allied characters;
+      The mech gains ${harmKeywords.immunity} to all ${techActionKeywords.tech_actions} and ${altText(attacksKeywords.tech_attack, 'attacks')}, including any from allied characters;
       The mech is ${conditionKeywords.stunned} indefinitely. Nothing can prevent this ${combatKeywords.condition}, and it remains until the mech ceases to be ${statusKeywords.shut_down}.
       \nThe only way to remove the ${statusKeywords.shut_down} ${combatKeywords.status} is to ${otherActionKeywords.boot_up} the mech.`,
     },

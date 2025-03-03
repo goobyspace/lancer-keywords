@@ -1,20 +1,19 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
-import { mechKeywords } from './mechKeywords.js';
+import { mechKeywords, mech as mechType } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
-export const mech: category = {
+export const mech: mechType = {
   keywords: {
     e_defense: {
       name: 'E-DEFENSE',
@@ -26,13 +25,13 @@ export const mech: category = {
       name: 'TECH ATTACK',
       page: `${BooksEnum.Core}:[64]`,
       category: 'mech',
-      text: `You add your mech’s ${mechKeywords.tech_attack} as a bonus instead of ${pilotKeywords.grit} when you conduct ${combatKeywords.electronic_warfare}, such as doing a ${attackKeywords.tech_attack}. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 Tech Attack for each point of ${pilotKeywords.systems}.`,
+      text: `You add your mech’s ${mechKeywords.tech_attack} as a bonus instead of ${pilotKeywords.grit} when you conduct ${combatKeywords.electronic_warfare}, such as doing a ${attacksKeywords.tech_attack}. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 Tech Attack for each point of ${pilotKeywords.systems}.`,
     },
     sensors: {
       name: 'SENSORS',
       page: `${BooksEnum.Core}:[34]`,
       category: 'mech',
-      text: `Your mech's sensors is the maximum distance in spaces over which a mech can detect enemies, use tech ${mechKeywords.systems} and make ${altText(attackKeywords.tech_attack, 'tech attacks')}. If a character is within your sensors and isn't ${statusKeywords.hidden}, you know they're there - even if they're not in ${combatKeywords.line_of_sight}.`,
+      text: `Your mech's sensors is the maximum distance in spaces over which a mech can detect enemies, use tech ${mechKeywords.systems} and make ${altText(attacksKeywords.tech_attack, 'tech attacks')}. If a character is within your sensors and isn't ${statusKeywords.hidden}, you know they're there - even if they're not in ${combatKeywords.line_of_sight}.`,
     },
     frame: {
       name: 'frame',
@@ -93,7 +92,7 @@ export const mech: category = {
       name: 'EVASION',
       page: `${BooksEnum.Core}:[34]`,
       category: 'mech',
-      text: `Evasion is how hard it is for ${altText(attackKeywords.melee_attack, 'melee')} and ${altText(attackKeywords.ranged_attack, 'ranged')} attacks to hit you. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 evasion for each point of ${pilotKeywords.agility}.`,
+      text: `Evasion is how hard it is for ${altText(attacksKeywords.melee_attack, 'melee')} and ${altText(attacksKeywords.ranged_attack, 'ranged')} attacks to hit you. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 evasion for each point of ${pilotKeywords.agility}.`,
     },
     hp: {
       name: 'HP',
@@ -111,7 +110,7 @@ export const mech: category = {
       name: 'HEAT CAP',
       page: `${BooksEnum.Core}:[34]`,
       category: 'mech',
-      text: `Your mech can take some ${harmKeywords.heat} from ${altText(attackKeywords.tech_attack, 'tech attacks')} and some of its own ${mechKeywords.systems}. If it takes more damage than its heat cap, it ${altText(harmKeywords.overheating, 'overheats')}. When a mech reaches above its heat cap, it takes 1 ${mechKeywords.stress} damage. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 heat cap for each point of ${pilotKeywords.engineering}.`,
+      text: `Your mech can take some ${harmKeywords.heat} from ${altText(attacksKeywords.tech_attack, 'tech attacks')} and some of its own ${mechKeywords.systems}. If it takes more damage than its heat cap, it ${altText(harmKeywords.overheating, 'overheats')}. When a mech reaches above its heat cap, it takes 1 ${mechKeywords.stress} damage. Outside of the amount given by a ${mechKeywords.frame}, a mech also gains +1 heat cap for each point of ${pilotKeywords.engineering}.`,
     },
     stress: {
       name: 'STRESS',

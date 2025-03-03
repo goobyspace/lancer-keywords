@@ -1,9 +1,8 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
-import { combatKeywords } from './combatKeywords.js';
+import { combatKeywords, combat as combatType } from './combatKeywords.js';
 import { conditionKeywords } from './conditionKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
 import { gearKeywords } from './gearKeywords.js';
@@ -18,7 +17,7 @@ import { statusKeywords } from './statusKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
 // generic combat concepts go here
-export const combat: category = {
+export const combat: combatType = {
   keywords: {
     movement: {
       name: 'movement',
@@ -42,7 +41,7 @@ export const combat: category = {
       name: 'threat',
       page: `${BooksEnum.Core}:[64]`,
       category: 'combat',
-      text: `Threat is the maximum range at which a ${altText(weaponKeywords.melee, 'melee weapon')} can be used, and at which both melee and ranged weapons can be used for ${reactionKeywords.Overwatch}.\n${combatKeywords.threat}, like ${combatKeywords.range}, is measured from the edge of a character, so larger mechs cover slightly more area than smaller mechs.\nUnless noted otherwise, all weapons default to 1 threat, which can be increased with some talents and gear.`,
+      text: `Threat is the maximum range at which a ${altText(weaponKeywords.melee, 'melee weapon')} can be used, and at which both melee and ranged weapons can be used for ${reactionKeywords.overwatch}.\n${combatKeywords.threat}, like ${combatKeywords.range}, is measured from the edge of a character, so larger mechs cover slightly more area than smaller mechs.\nUnless noted otherwise, all weapons default to 1 threat, which can be increased with some talents and gear.`,
     },
     line_of_sight: {
       name: 'line of sight',
@@ -170,8 +169,8 @@ export const combat: category = {
       category: 'combat',
       text: `Reactions are special ${combatKeywords.actions} that can be made outside of the usual ${combatKeywords.turn} order as responses to incoming ${altText(combatKeywords.attack, 'attacks')}, enemy ${combatKeywords.movement}, and other events. \nEach reaction can only be used a certain number of times per round, and a character can take only one reaction per ${combatKeywords.turn} (Their ${combatKeywords.turn} or that of another character), but there is no limit to how many reactions can be taken, overall.
       \nOutside of reactions provided by ${mechKeywords.systems}, ${pilotKeywords.talents}, ${altText(mechKeywords.weapon, 'weapons')} or other sources, each mech has access to two default reactions:
-      \n${reactionKeywords.Brace}
-      \n${reactionKeywords.Overwatch}
+      \n${reactionKeywords.brace}
+      \n${reactionKeywords.overwatch}
       \nAs well as the ability to create reactions via the ${otherActionKeywords.prepare} ${combatKeywords.quick_action}.
       \nUnless specified otherwise, reactions resolve after the activity that triggered them.`,
     },
@@ -187,7 +186,7 @@ export const combat: category = {
       category: 'combat',
       text: `Mechs can attack using the ${quickActionKeywords.skirmish}, ${fullActionKeywords.barrage}, ${quickActionKeywords.quick_tech}, ${fullActionKeywords.full_tech} and ${fullActionKeywords.improvised_attack} ${combatKeywords.actions}. Characters on foot attack using the ${pilotKeywords.fight} action. Whichever action is taken, the details of the attack are determined by the ${mechKeywords.weapon} or ${mechKeywords.systems} that are used.
       \nThere are three types of attack in mech combat:
-      \n${altText(attackKeywords.melee_attack, 'melee')}, ${altText(attackKeywords.ranged_attack, 'ranged')}, and ${altText(attackKeywords.tech_attack, 'tech')}.`,
+      \n${altText(attacksKeywords.melee_attack, 'melee')}, ${altText(attacksKeywords.ranged_attack, 'ranged')}, and ${altText(attacksKeywords.tech_attack, 'tech')}.`,
     },
     status: {
       name: 'status',
@@ -224,7 +223,7 @@ export const combat: category = {
       name: 'electronic warfare',
       page: `${BooksEnum.Core}:[-]`,
       category: 'combat',
-      text: `Although electronic warfare is not a keyword, it is a common term within the core book. Electronic warfare generally means any ${altText(combatKeywords.actions, 'action')} taken that results in a ${attackKeywords.tech_attack} or otherwise impairs a mech's ${mechKeywords.systems}. Mechs attempting to hack and take down other mechs systems.\nSee also ${fullActionKeywords.full_tech}, ${quickActionKeywords.quick_tech}, ${statusKeywords.exposed} & ${conditionKeywords.jammed}.`,
+      text: `Although electronic warfare is not a keyword, it is a common term within the core book. Electronic warfare generally means any ${altText(combatKeywords.actions, 'action')} taken that results in a ${attacksKeywords.tech_attack} or otherwise impairs a mech's ${mechKeywords.systems}. Mechs attempting to hack and take down other mechs systems.\nSee also ${fullActionKeywords.full_tech}, ${quickActionKeywords.quick_tech}, ${statusKeywords.exposed} & ${conditionKeywords.jammed}.`,
     },
 
     skill_check: {

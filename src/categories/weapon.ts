@@ -1,12 +1,11 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { combatKeywords } from './combatKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
-import { weaponKeywords } from './weaponKeywords.js';
+import { weaponKeywords, weapon as weaponType } from './weaponKeywords.js';
 
-export const weapon: category = {
+export const weapon: weaponType = {
   keywords: {
     size: {
       name: 'size',

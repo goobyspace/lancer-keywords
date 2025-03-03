@@ -1,4 +1,5 @@
 import { CategoriesEnum } from '../utility/enums.js';
+import { category, keyword } from '../utility/types.js';
 
 export const movementKeywords = {
   obstruction: `$${CategoriesEnum.Combat}#obstruction$`,
@@ -15,3 +16,21 @@ export const movementKeywords = {
   flight: `$${CategoriesEnum.Combat}#flight$`,
   teleportation: `$${CategoriesEnum.Combat}#teleportation$`,
 };
+
+export interface movement extends category {
+  keywords: {
+    obstruction: keyword;
+    adjacency: keyword;
+    splitting_movement: keyword;
+    engagement: keyword;
+    terrain: keyword;
+    lifting: keyword;
+    dragging: keyword;
+    jumping: keyword;
+    climbing: keyword;
+    falling: keyword;
+    gravity: keyword;
+    flight: keyword;
+    teleportation: keyword;
+  };
+}

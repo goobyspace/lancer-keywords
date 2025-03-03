@@ -16,9 +16,9 @@ import { reaction } from '../categories/reaction.js';
 import { status } from '../categories/status.js';
 import { techAction } from '../categories/techAction.js';
 import { weapon } from '../categories/weapon.js';
-import { categories } from './types.js';
+import { setCategories } from './types.js';
 
-export const Categories: categories = {
+export const Categories: setCategories = {
   ai,
   attacks,
   bonuses,

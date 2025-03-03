@@ -1,12 +1,11 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { aiKeywords } from './aiKeywords.js';
-import { attackKeywords } from './attackKeywords.js';
+import { attacksKeywords } from './attacksKeywords.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
-import { gearKeywords } from './gearKeywords.js';
+import { gearKeywords, gear as gearType } from './gearKeywords.js';
 import { harmKeywords } from './harmKeywords.js';
 import { mechKeywords } from './mechKeywords.js';
 import { movementKeywords } from './movementKeywords.js';
@@ -15,7 +14,7 @@ import { reactionKeywords } from './reactionKeywords.js';
 import { statusKeywords } from './statusKeywords.js';
 import { weaponKeywords } from './weaponKeywords.js';
 
-export const gear: category = {
+export const gear: gearType = {
   keywords: {
     accurate: {
       name: 'accurate',
@@ -57,7 +56,7 @@ export const gear: category = {
       name: 'ordnance',
       page: `${BooksEnum.Core}:[105]`,
       category: 'gear',
-      text: `This ${mechKeywords.weapon} can only be fired before the user ${altText(combatKeywords.movement, 'moves')} or takes any other ${combatKeywords.actions} on their turn, excepting ${altText(gearKeywords.protocol, 'protocols')}. The user can still act and ${altText(combatKeywords.movement, 'moves')} normally after attacking. Additionally, because of its size, this ${mechKeywords.weapon} can't be used against targets in ${movementKeywords.engagement} with the user's mech, and cannot be used for ${reactionKeywords.Overwatch}.`,
+      text: `This ${mechKeywords.weapon} can only be fired before the user ${altText(combatKeywords.movement, 'moves')} or takes any other ${combatKeywords.actions} on their turn, excepting ${altText(gearKeywords.protocol, 'protocols')}. The user can still act and ${altText(combatKeywords.movement, 'moves')} normally after attacking. Additionally, because of its size, this ${mechKeywords.weapon} can't be used against targets in ${movementKeywords.engagement} with the user's mech, and cannot be used for ${reactionKeywords.overwatch}.`,
     },
     overkill: {
       name: 'overkill',
@@ -88,19 +87,19 @@ export const gear: category = {
       name: 'smart',
       page: `${BooksEnum.Core}:[105]`,
       category: 'gear',
-      text: `This ${mechKeywords.weapon} has a self-guidance system, self-propelled projectiles, or even nanorobotic ammunition. These systems are effective enough that its attacks can't simply be dodged - they must be scrambled or jammed. Because of this, all attacks with this weapon - including ${altText(attackKeywords.melee_attack, 'melee')} and ${altText(attackKeywords.ranged_attack, 'ranged')} attacks - use the target's ${mechKeywords.e_defense} instead of ${mechKeywords.evasion}. Targets with no ${mechKeywords.e_defense} count as having 8 ${mechKeywords.e_defense}.`,
+      text: `This ${mechKeywords.weapon} has a self-guidance system, self-propelled projectiles, or even nanorobotic ammunition. These systems are effective enough that its attacks can't simply be dodged - they must be scrambled or jammed. Because of this, all attacks with this weapon - including ${altText(attacksKeywords.melee_attack, 'melee')} and ${altText(attacksKeywords.ranged_attack, 'ranged')} attacks - use the target's ${mechKeywords.e_defense} instead of ${mechKeywords.evasion}. Targets with no ${mechKeywords.e_defense} count as having 8 ${mechKeywords.e_defense}.`,
     },
     threat_x: {
       name: 'threat x',
       page: `${BooksEnum.Core}:[105]`,
       category: 'gear',
-      text: `This ${mechKeywords.weapon} can be used to make ${reactionKeywords.Overwatch} within X spaces. If it's a ${weaponKeywords.melee} ${mechKeywords.weapon}, it can be used to make ${altText(attackKeywords.melee_attack, 'melee attacks')} within X spaces.`,
+      text: `This ${mechKeywords.weapon} can be used to make ${reactionKeywords.overwatch} within X spaces. If it's a ${weaponKeywords.melee} ${mechKeywords.weapon}, it can be used to make ${altText(attacksKeywords.melee_attack, 'melee attacks')} within X spaces.`,
     },
     thrown_x: {
       name: 'thrown x',
       page: `${BooksEnum.Core}:[105]`,
       category: 'gear',
-      text: `This ${weaponKeywords.melee} ${mechKeywords.weapon} can be thrown at targets within X spaces. Thrown attacks follow the rules for ${altText(attackKeywords.melee_attack, 'melee attacks')} but are affected by ${combatKeywords.cover}; additionally, a thrown ${mechKeywords.weapon} comes to rest in an adjacent space to its target and must be retrieved as a ${combatKeywords.free_action} while adjacent to that ${mechKeywords.weapon} before it can be used again.`,
+      text: `This ${weaponKeywords.melee} ${mechKeywords.weapon} can be thrown at targets within X spaces. Thrown attacks follow the rules for ${altText(attacksKeywords.melee_attack, 'melee attacks')} but are affected by ${combatKeywords.cover}; additionally, a thrown ${mechKeywords.weapon} comes to rest in an adjacent space to its target and must be retrieved as a ${combatKeywords.free_action} while adjacent to that ${mechKeywords.weapon} before it can be used again.`,
     },
     deployable: {
       name: 'deployable',

@@ -1,6 +1,5 @@
 import { altText } from '../utility/altText.js';
 import { BooksEnum } from '../utility/enums.js';
-import { category } from '../utility/types.js';
 import { bonusesKeywords } from './bonusesKeywords.js';
 import { combatKeywords } from './combatKeywords.js';
 import { fullActionKeywords } from './fullActionKeywords.js';
@@ -10,8 +9,9 @@ import { otherActionKeywords } from './otherActionKeywords.js';
 import { pilotKeywords } from './pilotKeywords.js';
 import { quickActionKeywords } from './quickActionKeywords.js';
 import { techActionKeywords } from './techActionKeywords.js';
+import { condition as conditionType } from './conditionKeywords.js';
 
-export const condition: category = {
+export const condition: conditionType = {
   keywords: {
     immobilized: {
       name: 'immobilized',
