@@ -15,7 +15,7 @@ export const styles = css`
     display: block;
     padding: 0;
     margin: 0;
-    position: absolute;
+    position: fixed;
     width: 40rem;
     font-family: 'Inter', 'Roboto', sans-serif;
     white-space: normal;
